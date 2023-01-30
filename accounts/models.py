@@ -35,7 +35,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    password1 = models.CharField(max_length=30,  null=False, blank=False,default='password1')
+    password2 = models.CharField(max_length=30,  null=False, blank=False,default='password2')
+    StudentID = models.CharField(max_length=30,  null=False, blank=False,default='StudentID')
+    Department = models.CharField(max_length=30,  null=False, blank=False,default='Department')
 
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
